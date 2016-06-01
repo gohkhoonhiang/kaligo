@@ -1,0 +1,29 @@
+<h1>Hotels</h1>
+<%= link_to 'Kaligo', controller: 'hotels' %>
+
+<%= link_to 'New Hotel', new_hotel_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Source</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @hotels.each do |hotel| %>
+    <tr>
+      <td><%= link_to hotel.name, hotel_path(hotel) %></td>
+      <td><%= hotel.address %></td>
+      <td><%= image_tag(hotel.image) %></td>
+      <td><%= hotel.price %></td>
+      <td><%= hotel.source %></td>
+      <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+      <td><%= link_to 'Delete', hotel_path(hotel),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }  %></td>
+    </tr>
+  <% end %>
+</table>
+
