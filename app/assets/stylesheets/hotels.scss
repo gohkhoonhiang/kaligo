@@ -1,3 +1,14 @@
 // Place all the styles related to the hotels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail {
+  max-width: 350px;
+  max-height: 240px;
+}
+
+.thumbnail > img, 
+.thumbnail a > img {
+  height: 230px !important;
+  max-height: 230px;
+}
