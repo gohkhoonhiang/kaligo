@@ -21,7 +21,7 @@ class HotelsController < ApplicationController
   end
 
   def index
-    @hotels = Hotel.all
+    @hotels = HotelService.new.get_hotels
   end
 
   def show
