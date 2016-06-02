@@ -1,29 +1,28 @@
-<h1>Hotel <%= @hotel.name %></h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <span class="glyphicon glyphicon-bed"></span>
+          <%= @hotel.name %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p><%= image_tag(@hotel.image) %></p>
+        <p>
+          <span class="glyphicon glyphicon-map-marker"></span>
+          <%= @hotel.address %>
+        </p>
+      </div>
+      <div class="panel-footer">
+        <% if @hotel.price > 0 %>
+        SGD<%= format("%.2f", @hotel.price) %> from <%= @hotel.source %>
+        <% else %>
+        All rooms booked!
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @hotel.address %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@hotel.image) %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @hotel.price %>
-</p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @hotel.source %>
-</p>
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %>
 <%= link_to 'Back', hotels_path %>
